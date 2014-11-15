@@ -7,6 +7,14 @@ symboltable entries in a separate object file section.
 The goal of this is to allow easier interoperation with compiled languages.
 Another advantage might be a simplified C build process.
 
+Setup for development
+--------------------
+
+Get llvm, run `./configure` and `make`, wait 10 minutes. Then clone this project inside it's `lib/Transforms`
+directory. Go there, and run `make`. It should compile without errors.
+
+Run `./run-example.sh` to run the pass over the example file.
+
 University of Illinois/NCSA Open Source License
 ===============================================
 Copyright (c) 2012 Tinco Andringa 

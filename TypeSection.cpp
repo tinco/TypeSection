@@ -45,6 +45,19 @@ namespace {
          // Sadly it seems as though clang is not as modular as llvm is
          // and adding this functionality requires modifying clang to
          // emit this information, rather than defining a plugin.
+	 //
+         // This module would then read the metadata, and emit a section
+	 // 
+         // I think the section would be in IR, and then the codegen would
+         // pick it up as a IR and transform it to MC, which then would
+         // be compiled to a specific format.
+	 //
+	 // We can get data into a specific section by defining a global
+         // variable and setting its section attribute.
+         //
+         // Shorter plan: Just modify clang to collect all metadata and
+         // emit it to a global variable with a section attribute. No
+         // need for this module pass.
       }
 
       iplist<GlobalVariable>& vars = M.getGlobalList();
