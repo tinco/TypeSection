@@ -76,6 +76,14 @@ namespace {
           "\n";
       }
 
+      // Types:
+      // type :: Name | bareType
+      // bareType :: valueType | Pointer type
+      // valueType :: primitiveType | derivedType
+      // primitiveType :: integerType | floatType
+      // derivedType :: array | function | struct
+      // array :: Number
+
       // Build a tree of namespaces, the first being the global namespace
       // which is the default for C.
 
